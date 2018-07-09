@@ -8,7 +8,9 @@
     "category": "Theme",
     "website": "",
     "author": "Santoso SA.",
-    "license": "LGPL-3",
+    "license": "OPL-1",
+    "price": "144",
+    "currency": "EUR",
     "installable": True,
     "depends": [
         'web',        
