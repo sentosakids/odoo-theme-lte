@@ -9,6 +9,6 @@ Backend Features:
 =====
 Demo :
 =====
-url : http://santoso21.000webhostapp.com/odoo11
-user : demo
-password : demo
+* url : http://santoso21.000webhostapp.com/odoo11
+* user : demo
+* password : demo
