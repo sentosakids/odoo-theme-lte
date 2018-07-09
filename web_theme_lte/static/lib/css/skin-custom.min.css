@@ -1,0 +1,41 @@
+.o_web_client > .o_main .o_sub_menu {
+	position: relative;
+}
+.skin-blue .main-sidebar, .skin-blue .left-side {
+    padding-top: 0;
+}
+
+.o_control_panel .breadcrumb {
+    background: none;
+}
+
+.sidebar {
+	height: 600px;
+    overflow: auto;
+    padding-bottom: 300px;
+}
+
+.sidebar-menu>li {    
+    box-shadow: 1px 1px #353b48;
+}
+
+.o_control_panel {
+    background-color: lavender; 
+}
+.o_kanban_record {
+   border-top: 2px solid #d2d6de;
+    border-top-color: #3c8dbc;
+    border-radius: 3px;
+}
+
+.main-header .navbar-custom-menu, .main-header .navbar-right {
+    position: absolute;
+    left: 10%;
+    display: -webkit-box;
+    top: 20%;
+}
+
+.breadcrumb {
+	padding: 0;
+}
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+	<template id="assets_backend" name="Skin Theme adminLTE"
+		inherit_id="web.assets_backend">
+		<xpath expr=".">			
+			<link rel="stylesheet"
+                  href="/web_theme_lte/static/src/less/main.less"
+                  />
+			<link rel="stylesheet"
+                  href="/web_theme_lte/static/src/less/form_view.less"
+                  />
+			<link rel="stylesheet" type="text/css"
+				href="/web_theme_lte/static/lib/css/bootstrap.min.css" />
+			<link rel="stylesheet" type="text/css"
+				href="/web_theme_lte/static/lib/css/AdminLTE.min.css" />
+			<link rel="stylesheet" type="text/css"
+				href="/web_theme_lte/static/lib/css/skin-blue.min.css" />
+
+			<link rel="stylesheet" type="text/css"
+				href="/web_theme_lte/static/lib/css/skin-custom.min.css" />
+			
+			<script type="application/javascript" src="/web_theme_lte/static/lib/js/app.min.js" />
+		</xpath>
+	</template>
+	<template id="qunit_suite" inherit_id="web.qunit_suite">
+		<xpath expr="//t[@t-set='head']" position="inside">
+			<script type="application/javascript"
+				src="/web_responsive/static/tests/js/web_responsive.js" />
+		</xpath>
+	</template>
+</odoo>

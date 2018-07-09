@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+	<t t-name="UserMenu">
+		<div class="user-panel">
+			<div class="pull-left image">			
+				<img class="img-circle oe_topbar_avatar" t-att-src="_s + '/web/static/src/img/user_menu_avatar.png'" />								
+			</div>
+			<span class="oe_topbar_name pull-left info" style="padding-top: 25px;"/>
+			<div class="pull-left info">															
+				<a href="#">
+					<i class="fa fa-circle text-success"></i>
+					Online
+				</a>
+				<a t-att-href="'/web/session/logout'" style="padding-left:3em;">
+					<i class="fa fa-sign-out text-warning"></i>
+					Sign out
+				</a>								
+			</div>					
+		</div>	    
+	</t>
+
+</templates>
