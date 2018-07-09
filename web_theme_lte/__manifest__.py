@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 {
-    "name": "Backend Theme AdminLTE",
+    "name": "AdminLTE Backend Theme AdminLTE",
     "summary": "It provides a mobile theme like adminLTE Bootstrap compliant interface for Odoo Community "
                "web",
     "version": "10.0.0.0.1",
