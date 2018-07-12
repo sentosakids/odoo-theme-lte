@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+9# -*- coding: utf-8 -*-
 
 {
     "name": "AdminLTE Backend Theme AdminLTE",
@@ -9,7 +9,7 @@
     "website": "",
     "author": "Santoso SA.",
     "license": "OPL-1",
-    "price": "124",
+    "price": "99",
     "currency": "EUR",
     "installable": True,
     "depends": [
