@@ -9,7 +9,7 @@
     "website": "",
     "author": "Santoso SA.",
     "license": "OPL-1",
-    "price": "99",
+    "price": "99.0",
     "currency": "EUR",
     "installable": True,
     "depends": [
