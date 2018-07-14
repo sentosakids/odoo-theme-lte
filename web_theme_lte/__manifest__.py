@@ -23,5 +23,5 @@
         'static/src/xml/form_view.xml',
         'static/src/xml/base.xml',        
     ],
-    'images': ['images/main_1.png', 'images/main_2.png', 'images/main_screenshot.png']
+    'images': ['images/main_screenshot.png', 'images/main_1.png']
 }
