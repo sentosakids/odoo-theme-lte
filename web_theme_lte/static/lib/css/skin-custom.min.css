@@ -11,16 +11,17 @@
 
 .sidebar {
 	height: 600px;
-    overflow: auto;
+    /*overflow: auto;*/
     padding-bottom: 300px;
 }
 
 .sidebar-menu>li {    
-    box-shadow: 1px 1px #353b48;
+    /*box-shadow: 1px 1px #353b48;*/
 }
 
 .o_control_panel {
-    background-color: lavender; 
+    background-color: white; 
+	border-bottom: none;
 }
 .o_kanban_record {
    border-top: 2px solid #d2d6de;
@@ -30,12 +31,35 @@
 
 .main-header .navbar-custom-menu, .main-header .navbar-right {
     position: absolute;
-    left: 10%;
-    display: -webkit-box;
-    top: 20%;
+    left: 40px;    
+    top: 5px;
 }
 
 .breadcrumb {
 	padding: 0;
 }
 
+.skin-blue .sidebar-menu>li.header {
+    color: #4b646f;
+    background: #1a2226;
+}
+
+.o_searchview .o_searchview_facet .o_searchview_facet_label{
+	background-color: #3c8dbc
+}
+
+.o_mail_navbar_item > a > i {
+    font-size: x-large;
+}
+
+.o_mail_navbar_item .o_notification_counter {
+    position: absolute;
+    top: 20%;
+    left: auto;
+    bottom: auto;
+    right: 2px;
+    background: #3c8dbc;
+    color: white;
+    padding: 0em 0.1em;
+    font-size: 0.8em;
+}

@@ -5,7 +5,7 @@
 <odoo>
 
 	<template id="webclient_bootstrap" inherit_id="web.webclient_bootstrap"
-		name="App Drawer - Web Client">
+		name="Main Apps">
 
 		<!-- <xpath expr="//div[@class='o_sub_menu']" position="replace" /> -->
 
@@ -47,14 +47,26 @@
 						<!-- Sidebar toggle button -->
 						<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
 							<span class="sr-only">Toggle navigation</span>
-						</a>
-						<ul class="nav navbar-top-links navbar-right oe_systray" />
+						</a>	
+																							
+						<div class="navbar-custom-menu">													
+							<ul class="nav navbar-top-links oe_systray" style="display: -webkit-box;"/>          									
+						</div>														
+						<!--<ul class="nav navbar-top-links navbar-right oe_systray" />-->
+						<!--<ul class="nav navbar-nav navbar-right navbar-systray-item oe_systray" />-->						
+						<!--<ul class="nav navbar-top-links navbar-right oe_systray" />-->				
 					</nav>									
+					<!--
+					<div class="nav navbar-nav navbar-right navbar-systray o_menu_systray">
+						<ul	class="nav navbar-nav navbar-right navbar-systray-item oe_user_menu_placeholder" />
+						<ul class="nav navbar-nav navbar-right navbar-systray-item oe_systray" />
+					</div>
+					-->									
 				</header>				
 			</nav>
 		</xpath>
 
-	</template>
+	</template>	
 
 	<template id="menu_secondary" inherit_id="web.menu_secondary"
 		name="App Drawer - Secondary Menu">
@@ -68,10 +80,10 @@
 				<section class="sidebar">
 
 					<!-- Sidebar user panel (optional) -->
-					<div class="oe_user_menu_placeholder" style="display: none;"/>
-
+					<div class="oe_user_menu_placeholder" style="display: none;"/>					
 					<!-- Sidebar Menu -->
 					<ul class="sidebar-menu oe_application_menu_placeholder">
+						<li class="header">MAIN NAVIGATION</li>
 						<!-- Main Menu -->
 						<t t-foreach="menu_data['children']" t-as="menu">
 							<t t-if="menu['children']">
@@ -93,8 +105,22 @@
 								</li>
 							</t>
 							<t t-if="not menu['children']">								
-								<li class="treeview">
-									<t t-call="web.menu_link2"/>
+								<li class="treeview">									
+									<t t-set="debug_param" t-value="'?&amp;debug=' if debug else ''"/>
+									<a t-att-href="'/web%s#menu_id=%s&amp;action=%s' % (debug_param, menu['id'], menu['action'] and menu['action'].split(',')[1] or '')"
+										t-att-class="'oe_menu_toggler' if menu.get('children') else 'oe_menu_leaf'"
+										t-att-data-menu="menu['id']"
+										t-att-data-action-model="menu['action'] and menu['action'].split(',')[0] or ''"
+										t-att-data-action-id="menu['action'] and menu['action'].split(',')[1] or ''"> 
+										<img t-attf-src="/web/image/ir.ui.menu/{{ menu['id'] }}/web_icon_data"
+																	 class="app-drawer-icon-app img-rounded"
+																	 t-att-alt="menu['name']"
+																	 t-att-title="menu['name']" style="width:20px;"
+																	 />
+										<span>
+											<t t-esc="menu['name']" />
+										</span>
+									</a>
 								</li>								
 							</t>							
 						</t>
@@ -132,12 +158,26 @@
     </template>
 	
 	<template id="web.menu_secondary_submenu2">
-        <ul t-if="menu['children']" class="treeview-menu">
-            <li t-foreach="menu['children']" t-as="menu" class="treeview">
-                <t t-call="web.menu_link2"/>
-                <t t-call="web.menu_secondary_submenu2"/>
-            </li>
-        </ul>
+        <ul class="treeview-menu">
+            <t t-foreach="menu['children']" t-as="menu">
+                <li class="treeview">
+                    <t t-if="menu['children']">
+                        <a>							
+                            <span>
+								<t t-esc="menu['name']" />
+							</span>
+							<span class="pull-right-container">
+								<i class="fa fa-angle-left pull-right"></i>
+							</span>
+                        </a>
+                    </t>
+                    <t t-if="not menu['children']">
+                        <t t-call="web.menu_link2"/>
+                    </t>
+                    <t t-call="web.menu_secondary_submenu2"/>
+                </li>
+            </t>
+        </ul>		
     </template>
 	
 	<template id="web.menu_link2">
@@ -146,7 +186,7 @@
             t-att-class="'oe_menu_toggler' if menu.get('children') else 'oe_menu_leaf'"
             t-att-data-menu="menu['id']"
             t-att-data-action-model="menu['action'] and menu['action'].split(',')[0] or ''"
-            t-att-data-action-id="menu['action'] and menu['action'].split(',')[1] or ''"> 
+            t-att-data-action-id="menu['action'] and menu['action'].split(',')[1] or ''"> 			
 			<span>
 				<t t-esc="menu['name']" />
 			</span>
