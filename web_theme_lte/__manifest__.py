@@ -6,9 +6,10 @@
                "web",
     "version": "10.0.0.0.1",
     "category": "Theme",
+    "price":124,    
     "website": "",
     "author": "Santoso SA.",
-    "license": "LGPL-3",
+    "license": "OPL-1",
     "installable": True,
     "depends": [
         'web',        
