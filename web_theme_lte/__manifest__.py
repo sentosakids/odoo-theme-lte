@@ -2,7 +2,7 @@
 
 {
     "name": "Web Theme AdminLTE",
-    "summary": "It provides a mobile theme like adminLTE Bootstrap compliant interface for Odoo Community "
+    "summary": "It provides fully responsive mobile adminLTE Bootstrap for Backend Theme Odoo Community "
                "web",
     "version": "10.0.0.0.1",
     "category": "Theme",
@@ -23,4 +23,5 @@
         'static/src/xml/form_view.xml',
         'static/src/xml/base.xml',        
     ],
+    'images': ['images/main_screenshot.png'],
 }
