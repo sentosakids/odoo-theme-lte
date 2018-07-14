@@ -14,9 +14,9 @@ Installation
 Implementation
 ===============
 For now company name not automatic changed, so you can change manually from xml :
-* go to your module theme_lte > views > web.xml
-* search for "My Company"
-* then change with your company name
+- go to your module theme_lte > views > web.xml
+- search for "My Company"
+- then change with your company name
 
 I hope in another version it would be automatically changed and many features.
 
