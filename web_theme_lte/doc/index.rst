@@ -1,15 +1,23 @@
 ================
-Backend Features:
+Installation
 ================
- * This module provides a mobile compliant interface for Odoo Community web.
- * AdminLTE Navigation ( sidebar effect , all menu )
- * Keyboard shortcuts for easier navigation
- * Fully responsive form, tree, kanban, graph
+ - Just extract the module
+ - add to your addons folder
+ - then go to your Odoo Apps
+ - If you can't see the module, click "Update Apps List", wait until process done then search again
+ - After you found the module , just click Install
+ - Done.
+ 
+ Now you got AdminLTE theme for your odoo application.
 
-=====
-Demo :
-=====
+===============
+Implementation
+===============
+For now company name not automatic changed, so you can change manually from xml :
+* go to your module theme_lte > views > web.xml
+* search for "My Company"
+* then change with your company name
 
-url : http://santoso21.000webhostapp.com/odoo11
-user : demo
-password : demo
+I hope in another version it would be automatically changed and many features.
+
+Enjoy the theme.
