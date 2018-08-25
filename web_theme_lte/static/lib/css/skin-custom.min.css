@@ -1,65 +1,279 @@
+/* This is part of custom css of mine to implementation AdminLTE into Odoo*/
+.main-header .logo .logo-edit {
+    display: inline-flex;
+}
+
 .o_web_client > .o_main .o_sub_menu {
-	position: relative;
-}
-.skin-blue .main-sidebar, .skin-blue .left-side {
-    padding-top: 0;
+	flex: 0 0 0px;
 }
 
-.o_control_panel .breadcrumb {
-    background: none;
+.o_web_client .navbar li > a {
+ 	padding-top: 15px;
+	margin-top: 0px;
+	padding: 15px 8px;    
+ }
+ 
+.navbar-right {    
+    margin-right: 0px;
 }
 
-.sidebar {
-	height: 600px;
-    /*overflow: auto;*/
-    padding-bottom: 300px;
+.navbar-custom-menu>.navbar-nav>li>.dropdown-menu {    
+    right: 0;      
+    border-left: 1px solid #95a5a6;
+    border-bottom: 1px solid #95a5a6;
+    border-right: 1px solid #95a5a6;	
 }
 
-.sidebar-menu>li {    
-    /*box-shadow: 1px 1px #353b48;*/
+.main-header .navbar .dropdown-menu li a {
+    color: #777;
+}
+
+.sidebar-open .content-wrapper, .sidebar-open .main-footer {    
+    transform: translate(0, 0);   
+}
+
+.sidebar-open .main-sidebar {    
+    transform: translate(0, 0);    
+}
+
+.o_planner_systray > .progress {
+    margin: 19px 10px 0;
+}
+
+.o_mail_navbar_item .o_notification_counter {    
+    background: #00a65a;       
+}
+
+.o_searchview {           
+    border: 1px solid white;
+    border-bottom: 1px solid #ccc;    
+}
+
+.o_searchview .o_searchview_facet {
+    border: 1px solid #7777;    
+}
+
+.btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle) {    
+    border-color: white;    
+}
+
+.btn-group>.btn:last-child:not(:first-child), .btn-group>.dropdown-toggle:not(:first-child) {    
+    border-color: white;    
+}
+
+.btn-group>.btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {    
+    border: white;    
 }
 
 .o_control_panel {
-    background-color: white; 
-	border-bottom: none;
-}
-.o_kanban_record {
-   border-top: 2px solid #d2d6de;
-    border-top-color: #3c8dbc;
-    border-radius: 3px;
+	background-color: white;	
 }
 
-.main-header .navbar-custom-menu, .main-header .navbar-right {
-    position: absolute;
-    left: 40px;    
-    top: 5px;
+.o_control_panel > .breadcrumb {
+    width: 50%;
+    margin: 0;
+    font-size: 12px;
+    padding: 2px;
+    font-weight: bold;
+	background-color: white;
 }
 
-.breadcrumb {
-	padding: 0;
+.breadcrumb>li+li:before {
+    padding: 0 5px;
+    color: black;
+    content: ">";
 }
 
-.skin-blue .sidebar-menu>li.header {
-    color: #4b646f;
-    background: #1a2226;
+/* All skins for colorswath */
+.skin-black .btn-primary {	
+    background-color: #222d32;
+    border-color: #222d32;
 }
 
-.o_searchview .o_searchview_facet .o_searchview_facet_label{
-	background-color: #3c8dbc
+.skin-purple .btn-primary {	
+    background-color: #605ca8;
+    border-color: #605ca8;
 }
 
-.o_mail_navbar_item > a > i {
-    font-size: x-large;
+.skin-green .btn-primary {	
+    background-color: #00a65a;
+    border-color: #00a65a;
 }
 
-.o_mail_navbar_item .o_notification_counter {
-    position: absolute;
-    top: 20%;
-    left: auto;
-    bottom: auto;
-    right: 2px;
-    background: #3c8dbc;
-    color: white;
-    padding: 0em 0.1em;
-    font-size: 0.8em;
+.skin-red .btn-primary {	
+    background-color: #dd4b39;
+    border-color: #dd4b39;
+}
+
+.skin-yellow .btn-primary {	
+    background-color: #f39c12;
+    border-color: #f39c12;
+}
+
+.skin-black-light .btn-primary {	
+    background-color: #222d32;
+    border-color: #222d32;
+}
+
+.skin-purple-light .btn-primary {	
+    background-color: #605ca8;
+    border-color: #605ca8;
+}
+
+.skin-green-light .btn-primary {	
+    background-color: #00a65a;
+    border-color: #00a65a;
+}
+
+.skin-red-light .btn-primary {	
+    background-color: #dd4b39;
+    border-color: #dd4b39;
+}
+
+.skin-yellow-light .btn-primary {	
+    background-color: #f39c12;
+    border-color: #f39c12;
+}
+
+.skin-blue .o_searchview .o_searchview_facet .o_searchview_facet_label {
+    background-color: #3c8dbc;
+}
+
+.skin-black .o_searchview .o_searchview_facet .o_searchview_facet_label {
+    background-color: #222d32;
+}
+
+.skin-purple .o_searchview .o_searchview_facet .o_searchview_facet_label {
+    background-color: #605ca8;
+}
+
+.skin-green .o_searchview .o_searchview_facet .o_searchview_facet_label {
+    background-color: #00a65a;
+}
+
+.skin-red .o_searchview .o_searchview_facet .o_searchview_facet_label {
+    background-color: #dd4b39;
+}
+
+.skin-yellow .o_searchview .o_searchview_facet .o_searchview_facet_label {
+    background-color: #f39c12;
+}
+
+.skin-blue-light .o_searchview .o_searchview_facet .o_searchview_facet_label {
+    background-color: #3c8dbc;
+}
+
+.skin-black-light .o_searchview .o_searchview_facet .o_searchview_facet_label {
+    background-color: #222d32;
+}
+
+.skin-purple-light .o_searchview .o_searchview_facet .o_searchview_facet_label {
+    background-color: #605ca8;
+}
+
+.skin-green-light .o_searchview .o_searchview_facet .o_searchview_facet_label {
+    background-color: #00a65a;
+}
+
+.skin-red-light .o_searchview .o_searchview_facet .o_searchview_facet_label {
+    background-color: #dd4b39;
+}
+
+.skin-yellow-light .o_searchview .o_searchview_facet .o_searchview_facet_label {
+    background-color: #f39c12;
+}
+
+.skin-blue .main-header .navbar .dropdown-menu li a {
+    color: #777;
+}
+
+.skin-black .main-header .navbar .dropdown-menu li a {
+    color: #777;
+}
+
+.skin-purple .main-header .navbar .dropdown-menu li a {
+    color: #777;
+}
+
+.skin-green .main-header .navbar .dropdown-menu li a {
+    color: #777;
+}
+
+.skin-red .main-header .navbar .dropdown-menu li a {
+    color: #777;
+}
+
+.skin-yellow .main-header .navbar .dropdown-menu li a {
+    color: #777;
+}
+
+.skin-blue-light .main-header .navbar .dropdown-menu li a {
+    color: #777;
+}
+
+.skin-black-light .main-header .navbar .dropdown-menu li a {
+    color: #777;
+}
+
+.skin-purple-light .main-header .navbar .dropdown-menu li a {
+    color: #777;
+}
+
+.skin-green-light .main-header .navbar .dropdown-menu li a {
+    color: #777;
+}
+
+.skin-red-light .main-header .navbar .dropdown-menu li a {
+    color: #777;
+}
+
+.skin-yellow-light .main-header .navbar .dropdown-menu li a {
+    color: #777;
+}
+.skin-blue a {
+    color: #3c8dbc;
+}
+
+.skin-black a {
+    color: black;
+}
+
+.skin-purple a {
+    color: #605ca8;
+}
+
+.skin-green a {
+    color: #00a65a;
+}
+
+.skin-red a {
+    color: #dd4b39;
+}
+
+.skin-yellow a {
+    color: #f39c12;
+}
+
+.skin-blue-light a {
+    color: #3c8dbc;
+}
+
+.skin-black-light a {
+    color: black;
+}
+
+.skin-purple-light a {
+    color: #605ca8;
+}
+
+.skin-green-light a {
+    color: #00a65a;
+}
+
+.skin-red-light a {
+    color: #dd4b39;
+}
+
+.skin-yellow-light a {
+    color: #f39c12;
 }
