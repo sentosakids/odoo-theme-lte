@@ -11,7 +11,7 @@
     "website": "https://santoso21.000webhostapp.com/odoo8",
     "live_test_url": "https://santoso21.000webhostapp.com/odoo8",
     "author": "Santoso SA.",
-    "license": "OPL-1",
+    "license": "Other proprietary",
     "installable": True,
     "depends": [
         'web',        
