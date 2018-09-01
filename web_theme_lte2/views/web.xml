@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Copyright 2016 LasLabs Inc. License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html). -->
+
+<openerp>
+<data>
+    <template id="webclient_bootstrap" inherit_id="web.webclient_bootstrap" name="AdminLTE2 Theme">
+        <xpath expr="//t[@t-set='head']" position="inside">
+            <meta charset="utf-8"/>
+            <meta http-equiv="cleartype" content="on"/>
+            <meta name="MobileOptimized" content="320"/>
+            <meta name="HandheldFriendly" content="True"/>
+            <meta name="apple-mobile-web-app-capable" content="yes"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+        </xpath>
+
+        <xpath expr="//nav[@id='oe_main_menu_navbar']" position="replace">
+            <t t-set="body_classname" t-value="'hold-transition skin-blue sidebar-mini fixed layout-boxed'"/>
+            <header class="main-header">
+            	<!-- Logo -->				
+                <a t-att-href="'/web/?debug' if debug else '/web'" class="o_sub_menu_logo logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><i class="fa fa-home"></i>
+                    </span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><img src='/web/binary/company_logo' style="height:50px;"/>
+                    </span>
+               	</a>            	                                  
+                <!-- Header Navbar: style can be found in header.less -->
+                <nav id="oe_main_menu_navbar" class="oe_main_menu_navbar navbar navbar-static-top">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav oe_systray">                            
+                            <!-- Control Sidebar Toggle Button -->
+                            <li>
+                                <a href="#" data-toggle="control-sidebar">
+                                    <i class="fa fa-gears"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>                
+                
+            </header>
+            <!-- ./wrapper -->
+        </xpath>
+        
+        
+        <xpath expr="//div[@class='openerp openerp_webclient_container']" position="replace">
+        	<div class="o_main openerp content-wrapper">                
+                <div class="oe_leftbar" groups="base.group_user,base.group_portal">
+                    <t t-call="web.menu_secondary"/>
+                </div>
+				<div class="oe_application"/>									
+                <!-- Control Sidebar -->
+                <aside class="control-sidebar control-sidebar-dark">
+                    <!-- Create the tabs -->
+                    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                        <li style="display:none;">
+                            <a href="#control-sidebar-home-tab" data-toggle="tab">
+                                <i class="fa fa-home"></i>
+                            </a>
+                        </li>                        
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <!-- Home tab content -->
+                        <div class="tab-pane" id="control-sidebar-home-tab">
+                            <h3 class="control-sidebar-heading">Recent Activity</h3>                                                        
+                        </div>
+                        <!-- /.tab-pane -->
+                        <!-- Stats tab content -->
+                        <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>                                                                       
+                    </div>
+                </aside>
+                <!-- /.control-sidebar -->
+                <!-- Add the sidebar's background. This div must be placed
+                     immediately after the control sidebar -->
+                <div class="control-sidebar-bg"/>
+            </div>        	
+        </xpath>
+
+    </template>
+
+    <template id="menu_secondary" inherit_id="web.menu_secondary" name="App Drawer - Secondary Menu">
+        <xpath expr="//a[@class='oe_logo']" position="replace"/>
+        <xpath expr="//div[@class='oe_footer']" position="replace"/>
+        <xpath expr="//div[@class='oe_secondary_menus_container']/t" position="replace">
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar" groups="base.group_user,base.group_portal">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <!-- Sidebar user panel -->
+                    <div class="oe_user_menu_placeholder" style="display: none;"/>                    
+                    <!-- Sidebar Menu -->
+                    <ul class="sidebar-menu tree oe_application_menu_placeholder" data-widget="tree">
+                        <li class="header">MAIN NAVIGATION</li>
+                        <!-- Main Menu -->
+                        <t t-foreach="menu_data['children']" t-as="menu">
+                            <t t-if="menu['children']">
+                                <li class="treeview">
+                                    <a href="#">                                       
+                                        <span>
+                                            <t t-esc="menu['name']"/>
+                                        </span>
+                                        <span class="pull-right-container">
+                                            <i class="fa fa-angle-left pull-right"></i>
+                                        </span>
+                                    </a>
+                                    <t t-call="web.menu_secondary2"/>
+                                </li>
+                            </t>
+                            <t t-if="not menu['children']">
+                                <li class="treeview">
+                                    <t t-set="debug_param" t-value="'?&amp;debug=' if debug else ''"/>
+                                    <a t-att-href="'/web%s#menu_id=%s&amp;action=%s' % (debug_param, menu['id'], menu['action'] and menu['action'].split(',')[1] or '')"
+                                       t-att-class="'oe_menu_toggler' if menu.get('children') else 'oe_menu_leaf'"
+                                       t-att-data-menu="menu['id']"
+                                       t-att-data-action-model="menu['action'] and menu['action'].split(',')[0] or ''"
+                                       t-att-data-action-id="menu['action'] and menu['action'].split(',')[1] or ''">   
+										<img t-attf-src="/web/image/ir.ui.menu/{{ menu['id'] }}/web_icon_data"
+                                             class="app-drawer-icon-app img-rounded"
+                                             t-att-alt="menu['name']"
+                                             t-att-title="menu['name']" style="width:20px;"
+                                        />									   
+                                        <span>
+                                            <t t-esc="menu['name']"/>
+                                        </span>
+                                    </a>
+                                </li>
+                            </t>
+                        </t>
+                    </ul>
+                    <!-- /.sidebar-menu -->
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+        </xpath>
+
+    </template>
+
+    <template id="web.menu_secondary2">
+        <ul class="treeview-menu">
+            <t t-foreach="menu['children']" t-as="menu">
+                <li class="treeview">
+                    <t t-if="menu['children']">
+                        <a>
+                            <span>
+                                <t t-esc="menu['name']"/>
+                            </span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                    </t>
+                    <t t-if="not menu['children']">
+                        <t t-call="web.menu_link2"/>
+                    </t>
+                    <t t-call="web.menu_secondary_submenu2"/>
+                </li>
+            </t>
+        </ul>
+    </template>
+
+    <template id="web.menu_secondary_submenu2">
+        <ul class="treeview-menu">
+            <t t-foreach="menu['children']" t-as="menu">
+                <li class="treeview">
+                    <t t-if="menu['children']">
+                        <a>
+                            <span>
+                                <t t-esc="menu['name']"/>
+                            </span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                    </t>
+                    <t t-if="not menu['children']">
+                        <t t-call="web.menu_link2"/>
+                    </t>
+                    <t t-call="web.menu_secondary_submenu2"/>
+                </li>
+            </t>
+        </ul>
+    </template>
+
+    <template id="web.menu_link2">
+        <t t-set="debug_param" t-value="'?&amp;debug=' if debug else ''"/>
+        <a t-att-href="'/web%s#menu_id=%s&amp;action=%s' % (debug_param, menu['id'], menu['action'] and menu['action'].split(',')[1] or '')"
+           t-att-class="'oe_menu_toggler' if menu.get('children') else 'oe_menu_leaf'"
+           t-att-data-menu="menu['id']"
+           t-att-data-action-model="menu['action'] and menu['action'].split(',')[0] or ''"
+           t-att-data-action-id="menu['action'] and menu['action'].split(',')[1] or ''">
+            <span>
+                <t t-esc="menu['name']"/>
+            </span>
+        </a>
+    </template>
+</data>
+</openerp>
