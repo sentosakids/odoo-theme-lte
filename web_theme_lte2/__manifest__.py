@@ -19,6 +19,8 @@
     "data": [
         'views/assets.xml',
         'views/web.xml',
+        'views/res_config_view.xml',
+        'views/skins.xml',
     ],
     'qweb': [
         'static/src/xml/form_view.xml',
