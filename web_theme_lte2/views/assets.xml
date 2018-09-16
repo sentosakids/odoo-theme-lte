@@ -28,6 +28,8 @@
 			<!-- Custom my own css -->
 			<link rel="stylesheet" href="/web_theme_lte2/static/src/less/form_view.less" />
 			<link rel="stylesheet" href="/web_theme_lte2/static/lib/css/skin-custom.min.css" />
+      
+			<link rel="stylesheet" href="/web_theme_lte2/static/src/css/res_config_view.css" />
 
 			<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 			<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -77,7 +79,7 @@
 			<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 			<!-- <script src="/web_theme_lte2/static/lib/js/dashboard.js"></script> -->
 			<!-- AdminLTE for demo purposes -->
-			<script src="/web_theme_lte2/static/lib/js/demo.js"></script>
+			<!-- <script src="/web_theme_lte2/static/lib/js/demo.js"></script> -->
 		</xpath>
 	</template>	
 </odoo>
