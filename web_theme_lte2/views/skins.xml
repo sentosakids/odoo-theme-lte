@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <template id="lte2_skin_blue" inherit_id="web.webclient_bootstrap" name="AdminLTE2 Skin" active="True">
+        <xpath expr="//t[@t-set='body_classname']" position="attributes">
+            <attribute name="t-value" t-ignore="true">'o_web_client skin-blue'</attribute>
+        </xpath>
+    </template>
+    
+    <template id="lte2_skin_red" inherit_id="web.webclient_bootstrap" name="AdminLTE2 Skin" active="False">
+        <xpath expr="//t[@t-set='body_classname']" position="attributes">
+            <attribute name="t-value" t-ignore="true">'o_web_client skin-red'</attribute>
+        </xpath>
+    </template> 
+    
+</odoo>
