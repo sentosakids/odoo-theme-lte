@@ -4,6 +4,13 @@
 
 <odoo>
 
+    <template id="body_classes" inherit_id="web.webclient_bootstrap" priority="200"
+              name="AdminLTE2 Theme Body Classes">
+        <xpath expr="//t[@t-call='web.layout']" position="inside">
+          <t t-set="body_classname" t-value="body_classname + ' hold-transition sidebar-mini layout-boxed'"/>
+        </xpath>
+    </template>
+              
     <template id="webclient_bootstrap" inherit_id="web.webclient_bootstrap"
               name="AdminLTE2 Theme">
 
@@ -18,7 +25,11 @@
         </xpath>
 
         <xpath expr="//nav[@id='oe_main_menu_navbar']" position="replace">
-            <t t-set="body_classname" t-value="'hold-transition skin-blue sidebar-mini o_web_client fixed layout-boxed'"/>
+            <!-- <t t-set="body_classname" t-value="'hold-transition skin-blue sidebar-mini o_web_client fixed layout-boxed'"/> -->
+<!--             <t t-set="body_classname">
+              <t t-raw="hold-transition skin-blue sidebar-mini o_web_client fixed layout-boxed" />
+            </t>  -->
+            
             <header class="main-header">
             	<!-- Logo -->				
                 <a t-att-href="'/web/?debug' if debug else '/web'" class="o_sub_menu_logo logo">
