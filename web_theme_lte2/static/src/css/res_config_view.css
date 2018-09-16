@@ -1,0 +1,78 @@
+/* 
+    <div class="o_radio_item">
+        <input class="o_radio_input" type="radio" checked="true" data-index="0" data-value="blue" id="radio1003_blue">
+        <label class="o_form_label" for="radio1003_blue">On invitation (B2B)</label>
+    </div>
+    
+ */
+.skins-list .o_settings_container .o_setting_box .o_setting_right_pane .o_field_widget {
+    width: 100%;
+}
+.skins-list .o_field_widget.o_field_radio.o_vertical {
+  flex-flow: wrap;
+} 
+.skins-list .o_field_widget.o_field_radio {
+  flex-wrap: wrap;
+}
+.skins-list .o_field_widget.o_field_radio .o_radio_item {
+  /* display:inline-block; */
+  width: 80px;
+  flex-grow: 0;
+} 
+.skins-list .o_radio_item input[data-value]+label{
+  position:relative;
+  margin: 12px 0 3px;
+}
+.skins-list .o_radio_item input[data-value]+label:before,
+.skins-list .o_radio_item input[data-value]+label:after{
+  display:block;
+  content:' ';
+  width:56px;
+  height:30px;
+  background:lime;
+  border-top: 7px solid black;
+  
+  /* opacity: 0.5; */
+  }
+  
+/* pseudo window */  
+.skins-list .o_radio_item input[data-value]+label:before{
+  background: #EAEAEA;
+  box-shadow: 0 0 3px rgba(0,0,0,0.4);
+}
+/* pseudo sidebar */  
+.skins-list .o_radio_item input[data-value]+label:after{
+  position:absolute;
+  top:0;
+  left:0;
+  width: 11px;
+  border-top-color: rgba(78, 78, 78, 0.21);
+  background-color: #222D32;
+  background-clip: content-box;
+}
+
+.skins-list .o_radio_item input[data-value$=light]+label:after{
+  background-color:#eee;
+  }
+.skins-list .o_radio_item input[data-value|=blue]+label:before{
+  /* border-top-color: rgba(34, 45, 50, 0.17); */
+  border-top-color: #3c8dbc;
+  }
+.skins-list .o_radio_item input[data-value|=black]+label:before{
+  border-top-color: white;
+  }
+.skins-list .o_radio_item input[data-value|=green]+label:before{
+  border-top-color: #00A65A;
+  }
+.skins-list .o_radio_item input[data-value|=purple]+label:before{
+  border-top-color: #605CA8;
+  }
+.skins-list .o_radio_item input[data-value|=red]+label:before{
+  border-top-color: #DD4B39;
+  }
+  
+.skins-list .o_radio_item input[data-value|=yellow]+label:before{
+  border-top-color: #F39C12;
+  }
+  
+
